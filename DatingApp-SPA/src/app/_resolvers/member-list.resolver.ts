@@ -14,7 +14,7 @@ constructor(private userService: UserService, private router: Router, private al
 resolve(route: ActivatedRouteSnapshot): Observable<User[]>{
     return this.userService.getUsers().pipe(
         catchError(error => {
-            this.alertify.error('Problem retrieving data')
+            this.alertify.error('Problem retrieving data');
             this.router.navigate(['/home']);
             return of(null);
         })

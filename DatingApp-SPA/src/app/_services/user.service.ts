@@ -5,8 +5,6 @@ import { Observable } from 'rxjs';
 import { User } from '../_models/user';
 import { timestamp } from 'rxjs/operators';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -21,5 +19,9 @@ export class UserService {
 
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
+  }
+
+  updateUser(id: number, user: User) {
+    return this.http.put(this.baseUrl + 'users/' + id, user);
   }
 }
