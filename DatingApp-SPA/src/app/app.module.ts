@@ -1,4 +1,5 @@
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { TimeagoModule } from 'ngx-timeago';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
@@ -6,7 +7,7 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
-import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -51,6 +52,7 @@ export function tokenGetter(){
    ],
    imports: [
       BrowserModule,
+      TimeagoModule.forRoot(),
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
